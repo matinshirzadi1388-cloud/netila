@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Netila</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="grid-bg"></div>
+
+<section id="authScreen" class="auth-screen">
+  <div class="auth-art">
+    <div class="brand-mark">✈</div>
+    <div class="brand"><span>Netila</span>Chat</div>
+    <p>به دنیای گفت‌وگوهای بی‌پایان خوش آمدید</p>
+    <div class="mountains"></div>
+  </div>
+  <div class="auth-card glass">
+    <div class="auth-tabs">
+      <button id="loginTab" class="active">ورود</button>
+      <button id="registerTab">ثبت نام</button>
+    </div>
+    <div class="auth-heading">
+      <h1 id="authTitle">خوش آمدید 👋</h1>
+      <p id="authSub">برای ادامه وارد حساب خود شوید</p>
+    </div>
+    <form id="authForm">
+      <label>نام کاربری</label>
+      <div class="input-wrap"><span>♙</span><input id="username" required minlength="3" maxlength="24" placeholder="نام کاربری"></div>
+      <label>رمز عبور</label>
+      <div class="input-wrap"><span>♙</span><input id="password" type="password" required minlength="4" maxlength="64" placeholder="رمز عبور"><button type="button" class="eye" id="togglePass">◉</button></div>
+      <div id="confirmBox" class="hidden">
+        <label>تکرار رمز عبور</label>
+        <div class="input-wrap"><span>♙</span><input id="confirm" type="password" placeholder="تکرار رمز عبور"></div>
+      </div>
+      <div id="authError" class="error"></div>
+      <button class="neon-btn" type="submit" id="authBtn">ورود <b>→</b></button>
+    </form>
+    <button class="switch-link" id="switchAuth">حساب ندارید؟ ثبت نام کنید</button>
+    <small class="local-note">نسخه محلی • بدون شماره موبایل و ایمیل</small>
+  </div>
+</section>
+
+<section id="app" class="app hidden">
+  <aside class="sidebar glass">
+    <div class="side-top">
+      <div class="brand-mini"><span>Netila</span>Chat</div>
+      <button class="round-btn" id="newChat">＋</button>
+    </div>
+    <div class="search"><span>⌕</span><input id="search" placeholder="جستجو در گفتگوها..."></div>
+    <div class="side-nav">
+      <button class="nav active" data-view="chats">◉ <span>چت‌ها</span></button>
+      <button class="nav" data-view="groups">♧ <span>گروه‌ها</span></button>
+      <button class="nav" data-view="channels">➤ <span>کانال‌ها</span></button>
+      <button class="nav" data-view="contacts">♙ <span>مخاطبین</span></button>
+    </div>
+    <div class="chat-list" id="chatList"></div>
+    <div class="side-bottom">
+      <button id="settingsBtn">⚙ <span>تنظیمات</span></button>
+      <button id="profileBtn" class="profile-row"><div class="avatar" id="miniAvatar">M</div><div><b id="miniName">matin</b><small>آنلاین</small></div><span>⋮</span></button>
+    </div>
+  </aside>
+
+  <main class="chat-panel glass">
+    <header class="chat-head">
+      <button class="mobile-back" id="backBtn">‹</button>
+      <div class="person"><div class="avatar glow" id="chatAvatar">A</div><div><b id="chatTitle">Ali</b><small id="chatStatus">آنلاین</small></div></div>
+      <div class="head-actions"><button>⌕</button><button>⋮</button></div>
+    </header>
+    <div class="chat-wall" id="messages">
+      <div class="date-pill">امروز</div>
+    </div>
+    <div class="emoji-panel hidden" id="emojiPanel">
+      <button>😀</button><button>😂</button><button>😍</button><button>🔥</button><button>❤️</button><button>👍</button><button>😎</button><button>🎮</button><button>🚀</button><button>✨</button>
+    </div>
+    <form class="composer" id="messageForm">
+      <button type="button" id="attach" class="compose-icon">⌕</button>
+      <input id="message" autocomplete="off" placeholder="پیام خود را بنویسید...">
+      <button type="button" id="emoji" class="compose-icon">☺</button>
+      <button class="send" type="submit">↑</button>
+    </form>
+  </main>
+
+  <aside id="settingsPanel" class="settings glass hidden">
+    <div class="settings-head"><button id="closeSettings">‹</button><h2>تنظیمات</h2></div>
+    <div class="settings-profile"><div class="large-avatar" id="largeAvatar">M</div><div><h3 id="settingsName">matin</h3><small>@<span id="settingsHandle">matin</span></small></div><button>✎</button></div>
+    <div class="setting-group">
+      <button><span>🔔</span><div>اعلان‌ها<small>فعال</small></div><i>›</i></button>
+      <button><span>🔒</span><div>حریم خصوصی<small>کنترل دسترسی</small></div><i>›</i></button>
+      <button><span>◐</span><div>ظاهر برنامه<small>نئونی</small></div><i>›</i></button>
+      <button><span>◎</span><div>زبان<small>فارسی</small></div><i>›</i></button>
+      <button><span>▣</span><div>ذخیره‌سازی<small>محلی</small></div><i>›</i></button>
+    </div>
+    <button class="logout" id="logout">خروج از حساب</button>
+  </aside>
+</section>
+
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
